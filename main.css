@@ -21,6 +21,40 @@ a:hover {
     overflow: hidden;
 }
 
+/* Preloader */
+.preloader__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.preloader__circle {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+}
+body:not(.loaded) .preloader__circle {
+    animation: pulse 1.5s infinite ease-out alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Header */
 .header {
     display: flex;
